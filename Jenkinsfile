@@ -12,7 +12,7 @@ pipeline {
         stage('will fail') {
             steps {
                 script {
-                    boolean onError = params.continueOnError == true
+                    env.onError = params.continueOnError == true
                     catchError(buildResult: params.continueOnError ? 'SUCCESS' : 'FAILURE', stageResult: 'FAILURE') {  
                         sh 'echo "${onError}" "${collection_name}"'
                     }
