@@ -11,7 +11,7 @@ do
         shift
 done
 
-echo "$orgs"
+echo "${orgs[@]}"
 
 if [[ $orgs =~ "One" ]]; then
     echo "$orgs"
