@@ -12,17 +12,7 @@ pipeline {
     }
 
     stages {
-        stage('will fail') {
-            steps {
-                script {
-                    catchError {  
-                        sh 'exit 1'
-                    }
-                }
-            }
-        }
-
-        stage('will run anyways') {
+        stage('will run') {
             steps {
                 script {
                     env.orgs = Constants.ORGANIZATION_TYPES_REQUIRE_SAAS_ID
