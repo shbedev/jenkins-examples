@@ -14,4 +14,10 @@ class Constants {
     ]
 
     static final List<String> ORGANIZATION_TYPE_NAMES = ORGANIZATION_TYPES*.value
+
+    static final List<String> ORGANIZATION_TYPES_REQUIRE_SAAS_ID = [
+        ORGANIZATION_TYPES.ONE,
+        ORGANIZATION_TYPES.TWO,
+        ORGANIZATION_TYPES.THREE
+    ]
 }

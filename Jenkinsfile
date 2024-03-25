@@ -24,7 +24,7 @@ pipeline {
 
         stage('will run anyways') {
             steps {
-                sh 'echo "${country}"'
+                sh 'echo "${Constants.ORGANIZATION_TYPES_REQUIRE_SAAS_ID}"'
             }
         }
     }
