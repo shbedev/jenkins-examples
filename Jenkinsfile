@@ -24,8 +24,10 @@ pipeline {
 
         stage('will run anyways') {
             steps {
-                env.orgs = Constants.ORGANIZATION_TYPES_REQUIRE_SAAS_ID
-                sh 'echo "${orgs}"'
+                script {
+                    env.orgs = Constants.ORGANIZATION_TYPES_REQUIRE_SAAS_ID
+                    sh 'echo "${orgs}"'
+                }
             }
         }
     }
