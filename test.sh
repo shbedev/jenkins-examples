@@ -13,6 +13,6 @@ done
 
 echo "$orgs"
 
-if [[ ${orgs[*]} =~ $"One" ]]; then
+if [[ $orgs =~ "One" ]]; then
     echo "$orgs"
 fi
