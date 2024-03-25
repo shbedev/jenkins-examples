@@ -26,7 +26,7 @@ pipeline {
             steps {
                 script {
                     env.orgs = Constants.ORGANIZATION_TYPES_REQUIRE_SAAS_ID
-                    sh 'echo "${orgs}"'
+                    sh 'bash test.sh --orgs "${orgs[@]}"'
                 }
             }
         }
