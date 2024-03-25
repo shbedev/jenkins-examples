@@ -11,6 +11,8 @@ do
         shift
 done
 
+echo "$orgs"
+
 if [[ ${orgs[*]} =~ $"POC" ]]; then
     echo "$orgs"
 fi
