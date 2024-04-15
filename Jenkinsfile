@@ -16,8 +16,8 @@ pipeline {
         stage('will run') {
             steps {
                 script {
-                    sh 'echo $image | base64 -d > $image_FILENAME'
-                    sh 'ls -lah ~/workspace/run-shell-script'
+                    sh 'echo -n $image | base64 --decode > $image_FILENAME'
+                    sh 'ls -lah'
                     if (saas_id.isEmpty() && Constants.ORGANIZATION_TYPES_REQUIRE_SAAS_ID.contains(org_type)) {
                         error "${org_type} can't be created"
                     }
