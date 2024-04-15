@@ -16,7 +16,10 @@ pipeline {
         stage('will run') {
             steps {
                 script {
-                    echo FILE
+                    sh 'echo $FILE | base64 -d'
+                    withFileParameter('FILE') {
+                        sh 'cat $FILE'
+                    }
                     if (saas_id.isEmpty() && Constants.ORGANIZATION_TYPES_REQUIRE_SAAS_ID.contains(org_type)) {
                         error "${org_type} can't be created"
                     }
