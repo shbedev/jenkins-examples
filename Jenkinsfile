@@ -16,7 +16,7 @@ pipeline {
         stage('will run') {
             steps {
                 script {
-                    if (image.isEmpty()) {
+                    if (params.image.isEmpty()) {
                         error "No image provided"
                     }
                 }
