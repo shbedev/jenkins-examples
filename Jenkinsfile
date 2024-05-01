@@ -24,7 +24,7 @@ pipeline {
         stage('will run') {
             steps {
                 script {
-                    echo $fname
+                    
                     echo $LNAME
                     if (params.image == null) {
                         error "No image provided"
