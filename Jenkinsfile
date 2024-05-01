@@ -15,8 +15,10 @@ pipeline {
     stages {
         stage('will run') {
             steps {
-                if (image_FILENAME.isEmpty()) {
+                script {
+                    if (image_FILENAME.isEmpty()) {
                     error "No image provided"
+                }
                 }
                 unstash('image')
                 sh 'mv image $image_FILENAME'
