@@ -18,13 +18,13 @@ pipeline {
                 script {
                     def fname = "John"
                     env.LNAME = "Barry"
+                    echo fname
                 }
             }
         }
         stage('will run') {
             steps {
                 script {
-                    echo fname
                     echo $LNAME
                     if (params.image == null) {
                         error "No image provided"
