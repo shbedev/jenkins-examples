@@ -38,7 +38,7 @@ pipeline {
         stage('last') {
             when {
                 expression {
-                    env.CHECK
+                    !PHYSICAL
                 }
             }
             steps {
