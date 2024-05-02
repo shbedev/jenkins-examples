@@ -23,6 +23,7 @@ pipeline {
         stage('will run') {
             steps {
                 script {
+                    echo env.CHECK
                     if (env.CHECK) {
                         echo "1 == 1"
                     }
