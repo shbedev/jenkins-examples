@@ -29,8 +29,8 @@ pipeline {
                         echo "1 == 1"
                     }
                 }
-                unstash('image')
-                sh 'mv image $image_FILENAME'
+                // unstash('image')
+                // sh 'mv image $image_FILENAME'
             }
         }
 
