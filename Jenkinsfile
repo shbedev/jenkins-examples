@@ -25,8 +25,7 @@ pipeline {
             steps {
                 script {
                     echo env.CHECK
-                    echo PHYSICAL
-                    if (env.CHECK) {
+                    if (PHYSICAL) {
                         echo "1 == 1"
                     }
                 }
