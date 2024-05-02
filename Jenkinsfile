@@ -16,27 +16,31 @@ pipeline {
         stage('setup') {
             steps {
                 script {
-                    def fname = "John"
-                    env.LNAME = "Barry"
-                    echo fname
+                    env.CHECK = 1 != 1
                 }
             }
         }
         stage('will run') {
             steps {
                 script {
-                    echo env.LNAME
-                    if (params.image == null) {
-                        error "No image provided"
+                    if (env.CHECK) {
+                        echo "1 == 1"
                     }
                 }
                 unstash('image')
                 sh 'mv image $image_FILENAME'
-                script {
-                    if (saas_id.isEmpty() && Constants.ORGANIZATION_TYPES_REQUIRE_SAAS_ID.contains(org_type)) {
-                        error "${org_type} can't be created"
-                    }
+            }
+        }
+
+
+        stage('last') {
+            when {
+                expression {
+                    env.CHECK
                 }
+            }
+            steps {
+                echo "Hello World!"
             }
         }
     }
