@@ -20,4 +20,6 @@ class Constants {
         ORGANIZATION_TYPES.TWO,
         ORGANIZATION_TYPES.THREE
     ]
+
+    static final List<String> TIMEZONES = TimeZone.getAvailableIDs()
 }
